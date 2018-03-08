@@ -7,8 +7,8 @@
 #include <iostream>
 
 // Memory LCD pixel dimensions - ALTER ACCORDING TO YOUR PARTICULAR LCD MODEL
-#define LCDWIDTH		(96)
-#define LCDHEIGHT		(96)
+#define LCDWIDTH		(400)
+#define LCDHEIGHT		(240)
 
 // Delay constants for LCD timing   // (Datasheet values)
 #define PWRUP_DISP_DELAY	40  // (>30us)
