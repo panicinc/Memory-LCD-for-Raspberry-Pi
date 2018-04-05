@@ -34,7 +34,7 @@ MemoryLCD::MemoryLCD(char SCSpin, char DISPpin, char EXTCOMINpin, bool useEXTCOM
     if(pthread_create(&threadId, NULL, &hardToggleVCOM, (void *)EXTCOMIN)) {
       cout << "Error creating EXTCOMIN thread" << endl;
     } else {
-      cout << "PWM thread started successfully" << endl;
+      //cout << "PWM thread started successfully" << endl;
     }
   } else {
     // TODO: setup timer driven interrupt instead?
@@ -273,7 +273,7 @@ void MemoryLCD::softToggleVCOM() {
 void *MemoryLCD::hardToggleVCOM(void *arg) {
   //char extcomin = (char)arg;
   char extcomin = *((char*)(&arg));
-  cout << "Value of extcomin in hardToggleVCOM is " << (unsigned int)extcomin << endl;
+  //cout << "Value of extcomin in hardToggleVCOM is " << (unsigned int)extcomin << endl;
   // intended to be run as a separate thread. Do not execute in main loop!
   while(1) {
     bcm2835_delay(250);
