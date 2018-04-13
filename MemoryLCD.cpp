@@ -54,7 +54,7 @@ MemoryLCD::MemoryLCD(char SCSpin, char DISPpin, char EXTCOMINpin, bool useEXTCOM
   bcm2835_spi_begin();
   // set MSB here - setting to LSB elsewhere doesn't work. So I'm manually reversing lineAddress bit order instead.
   bcm2835_spi_setBitOrder(BCM2835_SPI_BIT_ORDER_MSBFIRST);
-  bcm2835_spi_setClockDivider(BCM2835_SPI_CLOCK_DIVIDER_128);	// this is the 2 MHz setting
+  bcm2835_spi_setClockDivider(BCM2835_SPI_CLOCK_DIVIDER_1024);	// this is the 2 MHz/8 setting
   bcm2835_spi_setDataMode(BCM2835_SPI_MODE0);
   bcm2835_spi_chipSelect(BCM2835_SPI_CS_NONE);
   // Not sure if I can use the built-in bcm2835 Chip Select functions as the docs suggest it only
